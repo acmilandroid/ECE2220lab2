@@ -1,0 +1,229 @@
+
+MP2: encoding and decoding (29, 24) Hamming code.
+Commands:
+	enc 3-letters
+	dec 8-hex-digits
+	quit
+# :Examples for MP2
+# :               CUt weight 11 00110
+Encoding:        t        U        C
+ 0x    00       74       55       43
+ -------- 01110100 01010101 01000011
+P1 : 0
+P2 : 0
+P4 : 1
+P8 : 1
+P16: 0
+ ---01110 10001010 01010100 10011100
+ Codeword: 0x0E8A549C
+
+Decoding: 0x0E8A549C
+E1 : 0
+E2 : 0
+E4 : 0
+E8 : 0
+E16: 0
+ No error
+ -------- 01110100 01010101 01000011
+ Information Word: 0x745543 (CUt)
+
+Decoding: 0x068A549C
+E1 : 0
+E2 : 0
+E4 : 1
+E8 : 1
+E16: 1
+ Corrected bit: 28
+ -------- 01110100 01010101 01000011
+ Information Word: 0x745543 (CUt)
+
+Decoding: 0x0F8A549C
+E1 : 1
+E2 : 0
+E4 : 0
+E8 : 1
+E16: 1
+ Corrected bit: 25
+ -------- 01110100 01010101 01000011
+ Information Word: 0x745543 (CUt)
+
+# :               b@H weight 6 10101
+Encoding:        H        @        b
+ 0x    00       48       40       62
+ -------- 01001000 01000000 01100010
+P1 : 1
+P2 : 0
+P4 : 1
+P8 : 0
+P16: 1
+ ---01001 00001000 10000110 00011001
+ Codeword: 0x09088619
+
+Decoding: 0x09088619
+E1 : 0
+E2 : 0
+E4 : 0
+E8 : 0
+E16: 0
+ No error
+ -------- 01001000 01000000 01100010
+ Information Word: 0x484062 (b@H)
+
+Decoding: 0x19088619
+E1 : 1
+E2 : 0
+E4 : 1
+E8 : 1
+E16: 1
+ Corrected bit: 29
+ -------- 01001000 01000000 01100010
+ Information Word: 0x484062 (b@H)
+
+Decoding: 0x09888619
+E1 : 0
+E2 : 0
+E4 : 0
+E8 : 1
+E16: 1
+ Corrected bit: 24
+ -------- 01001000 01000000 01100010
+ Information Word: 0x484062 (b@H)
+
+# :               A@@ weight 4 00000
+Encoding:        @        @        A
+ 0x    00       40       40       41
+ -------- 01000000 01000000 01000001
+P1 : 0
+P2 : 0
+P4 : 0
+P8 : 0
+P16: 0
+ ---01000 00001000 00000100 00000100
+ Codeword: 0x08080404
+
+Decoding: 0x08080404
+E1 : 0
+E2 : 0
+E4 : 0
+E8 : 0
+E16: 0
+ No error
+ -------- 01000000 01000000 01000001
+ Information Word: 0x404041 (A@@)
+
+Decoding: 0x08000404
+E1 : 0
+E2 : 0
+E4 : 1
+E8 : 0
+E16: 1
+ Corrected bit: 20
+ -------- 01000000 01000000 01000001
+ Information Word: 0x404041 (A@@)
+
+Decoding: 0x08088404
+E1 : 0
+E2 : 0
+E4 : 0
+E8 : 0
+E16: 1
+ Corrected bit: 16
+ -------- 01000000 01000000 01000001
+ Information Word: 0x404041 (A@@)
+
+# :               |?~ weight 17 11111
+Encoding:        }        ?        |
+ 0x    00       7d       3f       7c
+ -------- 01111101 00111111 01111100
+P1 : 1
+P2 : 1
+P4 : 1
+P8 : 1
+P16: 1
+ ---01111 10100111 11110111 11101011
+ Codeword: 0x0FA7F7EB
+
+Decoding: 0x0FA7F7EB
+E1 : 0
+E2 : 0
+E4 : 0
+E8 : 0
+E16: 0
+ No error
+ -------- 01111101 00111111 01111100
+ Information Word: 0x7D3F7C (|?})
+
+Decoding: 0x0FA7F3EB
+E1 : 1
+E2 : 1
+E4 : 0
+E8 : 1
+E16: 0
+ Corrected bit: 11
+ -------- 01111101 00111111 01111100
+ Information Word: 0x7D3F7C (|?})
+
+Decoding: 0x0FA7FFEB
+E1 : 0
+E2 : 0
+E4 : 1
+E8 : 1
+E16: 0
+ Corrected bit: 12
+ -------- 01111101 00111111 01111100
+ Information Word: 0x7D3F7C (|?})
+
+# :               \~_ weight 16 00000
+Encoding:        _        ~        \
+ 0x    00       5f       7e       5c
+ -------- 01011111 01111110 01011100
+P1 : 0
+P2 : 0
+P4 : 0
+P8 : 0
+P16: 0
+ ---01011 11101111 01100101 01100000
+ Codeword: 0x0BEF6560
+
+Decoding: 0x0BEF6560
+E1 : 0
+E2 : 0
+E4 : 0
+E8 : 0
+E16: 0
+ No error
+ -------- 01011111 01111110 01011100
+ Information Word: 0x5F7E5C (\~_)
+
+Decoding: 0x0BEF6561
+E1 : 1
+E2 : 0
+E4 : 0
+E8 : 0
+E16: 0
+ Corrected bit: 1
+ -------- 01011111 01111110 01011100
+ Information Word: 0x5F7E5C (\~_)
+
+Decoding: 0x0BEF6562
+E1 : 0
+E2 : 1
+E4 : 0
+E8 : 0
+E16: 0
+ Corrected bit: 2
+ -------- 01011111 01111110 01011100
+ Information Word: 0x5F7E5C (\~_)
+
+# :               a decoding failure
+Decoding: 0x0BEE2561
+E1 : 1
+E2 : 1
+E4 : 1
+E8 : 1
+E16: 1
+ Decoding failure: 31
+ -------- 01011111 01110010 01011100
+ Information Word: 0x5F725C (\r_)
+
+Goodbye

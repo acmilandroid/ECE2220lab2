@@ -1,0 +1,29 @@
+Examples for MP2
+               CUt weight 11 00110
+enc CUt
+dec e8a549c
+dec 68a549c
+dec f8a549c
+               b@H weight 6 10101
+enc b@H
+dec 9088619
+dec 19088619
+dec 9888619
+               A@@ weight 4 00000
+enc A@@
+dec 8080404
+dec 8000404
+dec 8088404
+               |?~ weight 17 11111
+enc |?}
+dec fa7f7eb
+dec fa7f3eb
+dec fa7ffeb
+               \~_ weight 16 00000
+enc \~_
+dec bef6560
+dec bef6561
+dec bef6562
+               a decoding failure
+dec bee2561
+quit
